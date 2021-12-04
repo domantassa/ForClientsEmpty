@@ -23,7 +23,6 @@ class NotificationController extends Controller
             'from' => 'KSDConnect',
             'text' => $text
         ]);
- 
-        dd('SMS message has been delivered.');
+        return back();
     }
 }
