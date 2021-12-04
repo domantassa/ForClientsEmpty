@@ -20,6 +20,7 @@ use App\User;
 }*/
 Auth::routes();
 Route::resource('verslai','VerslaiController');
+Route::get('paslaugos', 'paslaugos@paslaugos');
 Route::prefix('dashboard')->middleware('auth')->group(function(){ 
   Route::get('duk', function(){
     
