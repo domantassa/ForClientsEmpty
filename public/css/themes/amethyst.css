@@ -1080,7 +1080,7 @@ select.form-control:focus::-ms-value {
 }
 
 .border-primary-darker {
-  border-color: #006A56 !important;
+  border-color: #FFF !important;
 }
 
 .border-success-light {

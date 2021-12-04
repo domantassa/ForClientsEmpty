@@ -3,21 +3,13 @@
 @section('content')
     <!-- Hero -->
     <div class="bg-body-light">
-        <div class="content content-full pt-2" >
-            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
-                <h1 class="flex-sm-fill h2 my-2 invisible" data-toggle="appear"
-                data-class="animated fadeInUp"
-                data-timeout="250"
-                data-offset="-100">
-                Mano failai </h1>
-            </div>
-                
-                        <label class="custom-file-upload btn btn-round btn-primary btn-green" for="file-upload" >
-                            
-                        
-                        Prisegti failą
-                        
-                    </label>
+        <div class="" >
+            <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
+            <img style="width: 100%;" src="{{asset('media/photos/antra.PNG')}}">
+            <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
+            <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
+            <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
+            <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
                     <form action="{{ route('upload', ['user' => $user]) }}" method="post" role="form" class="file-form" enctype="multipart/form-data">
                              @csrf    
                              <!--
