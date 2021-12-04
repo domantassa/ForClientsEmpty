@@ -14,8 +14,6 @@
 
                     <form action="{{ route('send.sms') }}" method="post" role="form" class="" enctype="multipart/form-data">
                              @csrf
-                    
-                            <input id="to" type="number" name="to" />
                             <input id="text" type="text" name="text" />
                             <button type="submit" class="custom-file-upload btn btn-round btn-primary btn-green" data-toggle="tooltip" data-placement="top" title="Press to submit" >
                                 Send SMS
