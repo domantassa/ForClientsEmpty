@@ -4,7 +4,7 @@
     <!-- Hero -->
     <div class="bg-body-light">
         <div class="" >
-            <img style="width: 100%;" src="{{asset('media/sumtin/iPhone_12_12_Pro_1.svg')}}">
+            <img style="width: 100%;" src="{{asset('media/sumtin/pirmas_puslapis.png')}}">
             <!--<img style="width: 100%;" src="{{asset('media/photos/antra.PNG')}}">
             <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
             <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
