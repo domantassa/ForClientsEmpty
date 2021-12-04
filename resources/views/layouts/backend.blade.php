@@ -235,7 +235,7 @@
                 <!-- Side Header -->
                 <div class="content-header bg-white-5">
                     <!-- Logo -->
-                    <a href="{{route('files')}}"><img class="brand-logo" src="{{asset('media/logos/reklamos-ekosistema-logo.png')}}"></a>
+                    <a href="{{route('files')}}"><img class="brand-logo" src="{{asset('media/logos/connexa.png')}}"></a>
                     <!-- END Logo -->
 
                     <!-- Options -->
@@ -390,7 +390,7 @@
                     <div class="d-flex align-items-center">
                         <!-- Toggle Sidebar -->
                         <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
-                        <button type="button" class="btn btn-sm btn-dual mr-2 d-lg-none" data-toggle="layout" data-action="sidebar_toggle">
+                        <button type="button" class="btn btn-sm btn-dual mr-2 d-lg-none">
                             <i class="fa fa-fw fa-bars"></i>
                         </button>
                         <!-- END Toggle Sidebar -->
@@ -431,108 +431,15 @@
 
                     <!-- Right Section -->
                     <div class="d-flex align-items-center">
+                        <div style="font-weight: 600; color:#CD5C5C;font-size:12">CONNEXA.</div>
                         <!-- User Dropdown -->
                         <div class="dropdown d-inline-block ml-2">
-                            <button type="button" class="btn btn-sm btn-dual btn-round btn-white" style="padding:8px 8px" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="rounded" src="{{ asset('media/avatars/avatar10.jpg') }}" alt="Header Avatar" style="width: 18px;">
-                                <span class="d-none d-sm-inline-block ml-1">
-                                    @if(Auth::check())	
-                                        @if(Auth::user()->position == 'admin')	
-                                            Admin profilis	
-                                        @else	
-                                            Mano profilis
-                                        @endif	
-                                    @endif
-                                </span>
-                                <i class="fa fa-fw fa-angle-down d-none d-sm-inline-block"></i>
                             
-                            <div class="dropdown-menu dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="page-header-user-dropdown">
-                                <div class="p-3 text-center bg-primary">
-                                    <img class="img-avatar img-avatar48 img-avatar-thumb" src="{{ asset('media/avatars/avatar10.jpg') }}" alt="">
-                                </div>
-                                <div class="p-2">
-                              <!--      <h5 class="dropdown-header text-uppercase">User Options</h5>
-                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                                        <span>Inbox</span>
-                                        <span>
-                                            <span class="badge badge-pill badge-primary">0</span>
-                                            <i class="si si-envelope-open ml-1"></i>
-                                        </span>
-                                    </a>
-                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                                        <span>Profile</span>
-                                        <span>
-                                            <span class="badge badge-pill badge-success">0</span>
-                                            <i class="si si-user ml-1"></i>
-                                        </span>
-                                    </a>
-                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                                        <span>Settings</span>
-                                        <i class="si si-settings"></i>
-                                    </a>
-                                    <div role="separator" class="dropdown-divider"></div>
-                                    <h5 class="dropdown-header text-uppercase">Actions</h5>
-                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                                        <span>Lock Account</span>
-                                        <i class="si si-lock ml-1"></i>
-                                    </a>-->
-                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="{{ route('logout') }} " onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        <span>Atsijungti</span>
-                                        <i class="si si-logout ml-1"></i>
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">	
-                                        @csrf	
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                         <!-- END User Dropdown -->
 
                         <!-- Notifications Dropdown -->
                        
-                        @if ($notif->count() > 0)
-                            <div class="dropdown d-inline-block ml-2">
-                                <button type="button" class="btn btn-sm btn-dual badge-notif" style="vertical-align:middle" id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="si si-bell"></i>
-                                    <span id="notifCount" class="badge badge-dark badge-pill">{{$notif->count()}}</span>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="page-header-notifications-dropdown">
-                                    <div class="p-2 bg-primary text-center">
-                                        <h5 class="dropdown-header text-uppercase text-white">Pranešimai</h5>
-                                    </div>
-                                    <ul id="manoNotifai2" class="nav-items mb-0">
-                                        <div style="overflow:auto;max-height:300px">
-                                            @foreach ($notif->sortByDesc('id') as $oneNotif)	
-                                        
-                                        
-                                            <form class="" action="/dashboard/deletenotification" method="POST">
-                                                @csrf
-                                                <li class="">
-                                                <label class="click notif-item text-dark media py-2" for="submitas-{{$oneNotif->id}}" id="label-fileToUpload">
-                                                <input type="hidden" name="notification" value="{{$oneNotif->id}}" />
-                                                <input type="hidden" name="link" value="{{$oneNotif->link}}" />
-                                                <input type="submit" id="submitas-{{$oneNotif->id}}" class="d-none" value="">
-                                               
-                                                <div class="font-w600"><i class=" mr-2 ml-3 fa fa-fw fa-check-circle"></i><small class="text-muted">{{$oneNotif->message}}</small>
-                                                <br><small class=" mr-2 ml-5 text-muted">{{$oneNotif->created_at}}</small>
-                                               </div>
-                                               </label>
-                                               </li>
-                                            </form>
-                                        
-                                        
-                                            @endforeach	
-                                        </div>
-                                        <li class="notif-item">
-                                            <a class="" href="{{route('notifications.delete', ['user' => $user->id])}}">
-
-                                            <div class="p-2 text-center">
-                                                <h5 class="dropdown-header text-uppercase">Ištrinti visus pranešimus</h5>
-                                            </div>
-                                    
-                                            </a>
-                                        </li>
-                        @endif
+                        
 <!--<a href="" ><div class="p-2 bg-primary text-center">
                             <h6 class="delete-notifications dropdown-header text-uppercase text-white">Delete all notifications</h6>
                         </div> </a>-->

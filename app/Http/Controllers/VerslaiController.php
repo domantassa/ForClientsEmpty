@@ -17,7 +17,6 @@ class VerslaiController extends Controller
     {
         //
         $verslai=Verslas::get()->all();
-        dd($verslai);
         return view('verslai.index');
     }
 
