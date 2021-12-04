@@ -17,8 +17,16 @@ class VerslaiController extends Controller
     {
         //
         $verslai=Verslas::get()->all();
-        dd($verslai);
-        return view('verslai.index');
+        $atributai=Atributas::get();
+      //  $asd=$verslai[0];
+      //  dd($asd->atributas->first());
+      //  foreach ($verslai->atributas as $atributas) {
+      //      //
+      //      dd($asd->atributas);
+      //  }
+      //  dd($verslai,$atributai,$asd->atributas()->all());
+
+        return view('verslai.index')->with('verslai',$verslai);
     }
 
     /**

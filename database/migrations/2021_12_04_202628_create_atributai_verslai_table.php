@@ -13,7 +13,7 @@ class CreateAtributaiVerslaiTable extends Migration
      */
     public function up()
     {
-        Schema::create('atributai_verslai', function (Blueprint $table) {
+        Schema::create('atributas_verslas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('atributas_id');
             $table->integer('verslas_id');
