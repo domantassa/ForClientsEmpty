@@ -8,7 +8,7 @@
                 data-class="animated fadeInUp"
                 data-timeout="250"
                 data-offset="-100">
-                Aktyvūs projektai</h1>
+                Aktyvūs projektaia</h1>
             </div>
                 
             
@@ -17,13 +17,15 @@
     <!-- END Hero -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Page Content -->
-
     <div class="contentShadowInset">
         
         <div class="row justify-content-center dashboardas">
+           
             
             <div class="col-md-12 col-xl-12">
                 <div class="col-12 " style="padding-left:1.875rem">
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=16qttppQBzIsuMocAUHZVhYKSbUDQUbSl" width="640" height="480"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2296.286268373024!2d24.444221615517804!3d54.86278426669993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1slt!2slt!4v1638631253120!5m2!1slt!2slt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 @if($user->position!="admin")
                 <table style="overflow:scroll; width:1400px">
                     <thead >

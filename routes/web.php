@@ -19,7 +19,7 @@ use App\User;
   Route::post('register','Auth\RegisterController@showRegistrationForm')->middleware('admin');;
 }*/
 Auth::routes();
-
+Route::resource('verslai','VerslaiController');
 Route::prefix('dashboard')->middleware('auth')->group(function(){ 
   Route::get('duk', function(){
     
