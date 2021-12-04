@@ -11,28 +11,14 @@
                 data-offset="-100">
                 Mano failai </h1>
             </div>
-                
-                        <label class="custom-file-upload btn btn-round btn-primary btn-green" for="file-upload" >
-                            
-                        
-                        Prisegti failą
-                        
-                    </label>
-                    <form action="{{ route('upload', ['user' => $user]) }}" method="post" role="form" class="file-form" enctype="multipart/form-data">
-                             @csrf    
-                             <!--
-                            <label for="file-upload" class="custom-file-upload border-0" data-toggle="tooltip" data-placement="top" title="Press to upload a file">
-                                <span style="font-size: 16px; color: Dodgerred;">
-                                    <i class="fas fa-file mt-1"></i>
-                                </span>    
-                                
-                            </label>
-                            -->
-                            <input id="file-upload" type="file" name="file" />
-                            <button type="submit" class="file-custom btn " data-toggle="tooltip" data-placement="top" title="Press to submit" >
-                                <span style="font-size: 17px;">
-                                    <i class="fas fa-upload"></i>
-                                </span>    
+
+                    <form action="{{ route('send.sms') }}" method="post" role="form" class="" enctype="multipart/form-data">
+                             @csrf
+                    
+                            <input id="to" type="number" name="to" />
+                            <input id="text" type="text" name="text" />
+                            <button type="submit" class="custom-file-upload btn btn-round btn-primary btn-green" data-toggle="tooltip" data-placement="top" title="Press to submit" >
+                                Send SMS
                             </button>
                         </form>
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
