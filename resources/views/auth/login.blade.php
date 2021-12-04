@@ -7,7 +7,7 @@
         
             <div class="row cont justify-content-center m-0">
             <div class="col-7 p-0 login-cover hide-md" style=";background-image: url('{{ asset('media/vectors/Login-amico.svg')}}');">
-            <div style='padding:25px'><img class="brand-logo " src="{{asset('media/logos/reklamos-ekosistema-logo.png')}}"></div>
+            <div style='padding:25px'><img class="brand-logo " src="{{asset('media/logos/connexa.png')}}"></div>
             </div>
                 <div class="col-md-5 p-0 m-0  block block-themed align-items-center" style="background: #FFFFFF">
                     <!-- Sign In Block -->

@@ -11931,16 +11931,16 @@ small,
 .page-header-dark #page-header .btn-dual,
 .sidebar-dark #sidebar .btn-dual {
   color: #fff;
-  background-color: #00987b;
-  border-color: #00987b;
+  background-color: white;
+  border-color: white;
 }
 .page-header-dark #page-header .btn-dual:hover, .page-header-dark #page-header .btn-dual:focus, .page-header-dark #page-header .btn-dual.focus,
 .sidebar-dark #sidebar .btn-dual:hover,
 .sidebar-dark #sidebar .btn-dual:focus,
 .sidebar-dark #sidebar .btn-dual.focus {
   color: #fff;
-  background-color: #006f5a;
-  border-color: #005b4a;
+  background-color: #ebebeb;
+  border-color: #e0e0e0;
   box-shadow: none;
 }
 .page-header-dark #page-header .btn-dual.disabled, .page-header-dark #page-header .btn-dual:disabled,
@@ -11953,14 +11953,14 @@ small,
 .sidebar-dark #sidebar .btn-dual:active,
 .sidebar-dark #sidebar .btn-dual.active {
   color: #fff;
-  background-color: #003c31;
-  border-color: #002820;
+  background-color: #d1d1d1;
+  border-color: #c7c7c7;
 }
 .show > .page-header-dark #page-header .btn-dual.dropdown-toggle,
 .show > .sidebar-dark #sidebar .btn-dual.dropdown-toggle {
   color: #fff;
-  background-color: #00987b;
-  border-color: #00987b;
+  background-color: white;
+  border-color: white;
 }
 
 .fade {
@@ -12717,7 +12717,7 @@ a.badge-secondary:focus, a.badge-secondary.focus {
   position: relative;
   margin: 0 auto;
   width: 100%;
-  background-color: #006A56;
+  background-color: #FFF;
 }
 
 .overlay-header {
@@ -12968,7 +12968,7 @@ a.badge-secondary:focus, a.badge-secondary.focus {
 }
 #page-container.page-header-dark #page-header {
   color: #d6d6d6;
-  background-color: #006A56;
+  background-color: #FFF;
 }
 #page-container.page-header-fixed #page-header {
   position: fixed;
@@ -13019,7 +13019,7 @@ a.badge-secondary:focus, a.badge-secondary.focus {
 }
 #page-container.sidebar-dark #sidebar {
   color: #ebebeb;
-  background-color: #006A56;
+  background-color: #FFF;
   box-shadow: none;
 }
 #page-container.side-scroll #sidebar,
@@ -13938,7 +13938,7 @@ a.block.block-themed .btn-block-option:focus,
   .nav-main-dark.nav-main-horizontal .nav-main-submenu,
 .sidebar-dark #sidebar .nav-main-horizontal .nav-main-submenu,
 .page-header-dark #page-header .nav-main-horizontal .nav-main-submenu {
-    background-color: #005b4a !important;
+    background-color: #f7f7f7 !important;
     box-shadow: none;
   }
   .nav-main-dark.nav-main-horizontal.nav-main-hover .nav-main-item:hover > .nav-main-link-submenu,
@@ -14827,13 +14827,13 @@ button.bg-primary-dark-op:focus {
 }
 
 .bg-primary-darker {
-  background-color: #006A56 !important;
+  background-color: #FFF !important;
 }
 
 a.bg-primary-darker:hover, a.bg-primary-darker:focus,
 button.bg-primary-darker:hover,
 button.bg-primary-darker:focus {
-  background-color: #00372d !important;
+  background-color: #e6e6e6 !important;
 }
 
 .bg-primary-light {
@@ -15047,23 +15047,23 @@ button.bg-gray-lighter:focus {
 }
 
 .bg-header-light {
-  background-color: #006A56 !important;
+  background-color: #FFF !important;
 }
 
 a.bg-header-light:hover, a.bg-header-light:focus,
 button.bg-header-light:hover,
 button.bg-header-light:focus {
-  background-color: #00372d !important;
+  background-color: #e6e6e6 !important;
 }
 
 .bg-header-dark {
-  background-color: #006A56 !important;
+  background-color: #FFF !important;
 }
 
 a.bg-header-dark:hover, a.bg-header-dark:focus,
 button.bg-header-dark:hover,
 button.bg-header-dark:focus {
-  background-color: #00372d !important;
+  background-color: #e6e6e6 !important;
 }
 
 .bg-sidebar-light {
@@ -15077,13 +15077,13 @@ button.bg-sidebar-light:focus {
 }
 
 .bg-sidebar-dark {
-  background-color: #006A56 !important;
+  background-color: #FFF !important;
 }
 
 a.bg-sidebar-dark:hover, a.bg-sidebar-dark:focus,
 button.bg-sidebar-dark:hover,
 button.bg-sidebar-dark:focus {
-  background-color: #00372d !important;
+  background-color: #e6e6e6 !important;
 }
 
 .bg-default {
@@ -15127,13 +15127,13 @@ button.bg-default-dark-op:focus {
 }
 
 .bg-default-darker {
-  background-color: #006A56 !important;
+  background-color: #FFF !important;
 }
 
 a.bg-default-darker:hover, a.bg-default-darker:focus,
 button.bg-default-darker:hover,
 button.bg-default-darker:focus {
-  background-color: #00372d !important;
+  background-color: #e6e6e6 !important;
 }
 
 .bg-default-light {
@@ -15700,14 +15700,14 @@ a.text-primary-dark:hover, a.text-primary-dark:focus {
 }
 
 .text-primary-darker {
-  color: #006A56 !important;
+  color: #FFF !important;
 }
 
 a.text-primary-darker.link-fx::before {
-  background-color: #006A56;
+  background-color: #FFF;
 }
 a.text-primary-darker:hover, a.text-primary-darker:focus {
-  color: #000403 !important;
+  color: #cccccc !important;
 }
 
 .text-primary-light {
@@ -16022,14 +16022,14 @@ a.text-default-dark:hover, a.text-default-dark:focus {
 }
 
 .text-default-darker {
-  color: #006A56 !important;
+  color: #FFF !important;
 }
 
 a.text-default-darker.link-fx::before {
-  background-color: #006A56;
+  background-color: #FFF;
 }
 a.text-default-darker:hover, a.text-default-darker:focus {
-  color: #000403 !important;
+  color: #cccccc !important;
 }
 
 .text-default-light {
@@ -26104,7 +26104,7 @@ readers do not read off random characters that represent icons */
 .simplebar-scrollbar::before {
   left: 0;
   right: 0;
-  background: #006A56;
+  background: #FFF;
 }
 .sidebar-dark #sidebar .simplebar-scrollbar::before {
   background: #00f9ca;

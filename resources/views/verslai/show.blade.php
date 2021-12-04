@@ -1,15 +1,23 @@
-@extends('layouts.backend', ['user' => $user, 'users' => $users, 'notif' => $notif])
+@extends('layouts.simple')
 
 @section('content')
     <!-- Hero -->
     <div class="bg-body-light">
-        <div class="" >
-            <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
-            <img style="width: 100%;" src="{{asset('media/photos/antra.PNG')}}">
-            <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
-            <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
-            <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
-            <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
+        <div class="content content-full pt-2" >
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+                <h1 class="flex-sm-fill h2 my-2 invisible" data-toggle="appear"
+                data-class="animated fadeInUp"
+                data-timeout="250"
+                data-offset="-100">
+                Mano failai </h1>
+            </div>
+                
+                        <label class="custom-file-upload btn btn-round btn-primary btn-green" for="file-upload" >
+                            
+                        
+                        Prisegti failą
+                        
+                    </label>
                     <form action="{{ route('upload', ['user' => $user]) }}" method="post" role="form" class="file-form" enctype="multipart/form-data">
                              @csrf    
                              <!--
@@ -52,16 +60,7 @@
             <div class="col-12 " style="padding-left:1.875rem">
             <table>
                 <tbody>
-                        @foreach ($files->where('order_id',null) as $file)
-                            
-                           <tr>
-                            
-                                <td style="width:100%"><div  class=" col btn-round btn-grey mr-2" style="text-align:left">{{$file->name}}</div></td>
-                                <td style="width:100px"><a href="{{route('download',$file->id)}}"><div  class=" btn btn-round btn-primary btn-green">Parsisiusti</div></a></td>
-                                <td  style="width:30px"><div  class="  btn-round btn-trash"><a href="{{ route('deleteFile', ['file' => $file->id]) }}"><i class="fa fa-trash trash"></i></a></div></td>
-                            
-                            </tr>
-                            @endforeach
+                       
                 </tbody>
             </table>
             </div>
@@ -85,13 +84,6 @@
 
                         <div class="text-center">
 
-                        @if ($files->first() && Auth::user()->position == 'admin')
-
-                        <form action="{{ route('deleteDir', ['user' => $user]) }}">
-                            <input type="submit" class="btn btn-primary" value="Delete all" />
-                            
-                        </form>
-                        @endif 
                            
                         
                     </div>
