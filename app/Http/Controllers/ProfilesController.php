@@ -28,21 +28,24 @@ class ProfilesController extends Controller
 
     public function index()
     {
-        
+      //  dd(1);
         //$user = User::findOrFail($user);
        // return view('dashboard', [
         //    'user' => $user,
        // ]);
        
+            //dd( User::get()->first()->notifications()->get());
             
-            //dd($refresh_date);
-            $notif = Auth()->User()->notifications()->get();
+            //$notif = Auth()->User()->notifications()->get();
+            $notif = User::get()->first()->notifications()->get();
+            
             //event(new NewMessageOrFile('hello world'));
-            
-            $files = file::where('owner_id', Auth()->User()->id)->get();
-
-            $user = Auth()->User();
-            
+            //User::get()->first();
+           // $files = file::where('owner_id', Auth()->User()->id)->get();
+           $files = file::where('owner_id', User::get()->first()->id)->get();
+           //$user = Auth()->User();
+           $user =  User::get()->first();
+          //  User::get()->first()
             if($user->refresh_date != null)
             {
                 $plan = $user->plan;
@@ -71,8 +74,8 @@ class ProfilesController extends Controller
             }
             
             
-            return view('dashboard', ['user' => Auth()->User(), 'users' => User::all(), 'files'=>$files, 'notif' => $notif]);
-        
+           // return view('dashboard', ['user' => Auth()->User(), 'users' => User::all(), 'files'=>$files, 'notif' => $notif]);
+        return view('dashboard', ['user' => User::get()->first(), 'users' => User::all(), 'files'=>$files, 'notif' => $notif]);
 
        
     }
