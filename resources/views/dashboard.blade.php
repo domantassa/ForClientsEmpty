@@ -4,7 +4,10 @@
     <!-- Hero -->
     <div class="bg-body-light">
         <div class="" >
-            <img style="width: 100%;" src="{{asset('media/sumtin/pirmas_puslapis.png')}}">
+            <div style="display:inline-block">
+                <img style="width: 100%;" src="{{asset('media/sumtin/pirmas_puslapis.png')}}">
+                <a style="position:absolute;top:220px;left:25px;color:red;width:320px;height:40px;background:blue;" href="{{route('files')}}"></a>
+            </div>
             <!--<img style="width: 100%;" src="{{asset('media/photos/antra.PNG')}}">
             <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
             <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
@@ -68,33 +71,7 @@
                 
                 <div class=" {{ $files->count() ? 'blockWithTopMargin' : '' }}">
 
-                    <div class="block-content">
-                        <p class="font-size-sm text-muted">
-                            
-                        </p>
-                        <p class="font-size-sm text-muted">
-                             <strong></strong>
-                        </p>
-
-                        <form action="{{ route('upload', ['user' => $user]) }}" method="post" role="form" enctype="multipart/form-data">
-                            @csrf
-                            <input type="file" name="file" id="file" aria-label="File browser example">
-                            
-                            
-                        </form>
-
-                        <div class="text-center">
-
-                        @if ($files->first() && Auth::user()->position == 'admin')
-
-                        <form action="{{ route('deleteDir', ['user' => $user]) }}">
-                            <input type="submit" class="btn btn-primary" value="Delete all" />
-                            
-                        </form>
-                        @endif 
-                           
-                        
-                    </div>
+                    
                             
                         
                         
