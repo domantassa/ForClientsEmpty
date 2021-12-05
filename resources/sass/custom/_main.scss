@@ -491,4 +491,17 @@ height:
   }
 }
 
+#page-container.sidebar-o {
+     padding-left: 0;
 
+     element.style {
+      width: 100%;
+      max-width: 500px;
+      z-index: 0;
+  }
+}
+
+  #page-container.page-header-fixed.sidebar-o #page-header{
+    padding-left: 0;
+
+  }

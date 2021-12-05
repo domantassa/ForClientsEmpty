@@ -88,7 +88,7 @@ Route::get('chat', function() {
 Route::get('forma_photo', function() {
 
   $notif =  User::get()->first()->notifications()->get();
-  return view('forma_photo',['user' =>  User::get()->first(), 'users' => User::all(), 'notif' => $notif]);
+  return view('formaPhoto',['user' =>  User::get()->first(), 'users' => User::all(), 'notif' => $notif]);
 
 })->name('forma_photo');
 
