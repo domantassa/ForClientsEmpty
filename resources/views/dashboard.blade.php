@@ -6,7 +6,7 @@
         <div class="" >
             <div style="display:inline-block">
                 <img style="width: 100%;" src="{{asset('media/sumtin/pirmas_puslapis.png')}}">
-                <a style="position:absolute;top:220px;left:25px;color:red;width:320px;height:40px;background:blue;" href="{{route('files')}}"></a>
+                <a style="position:absolute;top:220px;left:25px;color:red;width:320px;height:40px;" href="{{route('files')}}"></a>
             </div>
             <!--<img style="width: 100%;" src="{{asset('media/photos/antra.PNG')}}">
             <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
