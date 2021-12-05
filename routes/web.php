@@ -104,7 +104,7 @@ Route::prefix('dashboard')->group(function(){
     
     return view('duk')->with(['user'=>Auth::user(),'users' =>User::all(),'notif'=> User::get()->first()->notifications()->get()]);
   })->name('duk');
-  Route::post('send-sms-notification', 'NotificationController@sendSmsNotificaition')->name('send.sms');
+  Route::get('send-sms-notification', 'NotificationController@sendSmsNotificaition')->name('send.sms');
   Route::post('/deletenotification', 'FileNotificationController@destroy')->name('notifications.destroy');
   Route::get('/deleteNotifications/{user}', 'FileNotificationController@delete')->name('notifications.delete');
   Route::get('files', 'FileController@index')->name('files');
