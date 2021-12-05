@@ -6,7 +6,7 @@
         <div class="" >
             <div style="display:inline-block">
             <img style="width: 100%;" src="{{asset('media/sumtin/septintas.png')}}">
-                <a style="position:absolute;top:<?php echo(955/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('startPrj')}}"></a>
+                <a style="position:absolute;top:<?php echo(935/16);?>rem;left:0;color:red;width:100%;height:<?php echo(80/16);?>rem;" href="{{route('startPrj')}}"></a>
             </div>        
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                             <script>
