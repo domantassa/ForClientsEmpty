@@ -44,6 +44,8 @@ class RegisterController extends Controller
 
     public function __construct()
     {
+        $this->middleware('guest');
+        /*
         $users=User::all();
         if(count($users)==0)
         {
@@ -52,6 +54,7 @@ class RegisterController extends Controller
         else{
             $this->middleware('admin');
         }
+        */
     }
 
     /**

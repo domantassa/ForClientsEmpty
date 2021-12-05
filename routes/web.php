@@ -18,6 +18,13 @@ use App\User;
   Route::get('register','Auth\RegisterController@showRegistrationForm')->name('register')->middleware('admin');
   Route::post('register','Auth\RegisterController@showRegistrationForm')->middleware('admin');;
 }*/
+Route::get('forma',function(){
+  $notif = Auth()->User()->notifications()->get();
+
+   return view('forma', ['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);    
+
+
+})->name('files');
 Auth::routes();
 Route::resource('verslai','VerslaiController');
 Route::prefix('dashboard')->middleware('auth')->group(function(){ 
