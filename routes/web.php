@@ -57,6 +57,20 @@ Route::get('production', function() {
 
 })->name('production');
 
+Route::get('startPrj', function() {
+
+  $notif = Auth()->User()->notifications()->get();
+  return view('startPrj',['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);
+
+})->name('startPrj');
+
+Route::get('endPrj', function() {
+
+  $notif = Auth()->User()->notifications()->get();
+  return view('endPrj',['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);
+
+})->name('endPrj');
+
 Route::prefix('dashboard')->middleware('auth')->group(function(){ 
   Route::get('duk', function(){
     
