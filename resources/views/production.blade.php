@@ -5,7 +5,6 @@
     <div class="bg-body-light">
         <div class="" >
             <img style="width: 100%;" src="{{asset('media/sumtin/vienuoliktas.png')}}">
-                    
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                             <script>
                                 $("#file-upload").change(function(){

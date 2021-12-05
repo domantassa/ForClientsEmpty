@@ -4,12 +4,11 @@
     <!-- Hero -->
     <div class="bg-body-light">
         <div class="" >
+            <div style="display:inline-block">
             <img style="width: 100%;" src="{{asset('media/sumtin/trecias_puslapis.png')}}">
-            <a href="{{ route('more_info', ['user' => $user]) }}'" class="custom-file-upload btn btn-round btn-primary btn-green " data-toggle="tooltip" data-placement="top" title="Press to submit" >
-                                <span style="font-size: 17px;">
-                                    <i class="fas fa-upload"></i>
-                                </span>    
-            </a>
+                <a style="position:absolute;top:<?php echo(875/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('chat')}}"></a>
+                <a style="position:absolute;top:<?php echo(2140/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('chat')}}"></a>
+            </div>
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                             <script>
                                 $("#file-upload").change(function(){

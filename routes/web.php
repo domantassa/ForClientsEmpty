@@ -71,6 +71,13 @@ Route::get('endPrj', function() {
 
 })->name('endPrj');
 
+Route::get('chat', function() {
+
+  $notif = Auth()->User()->notifications()->get();
+  return view('chat',['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);
+
+})->name('chat');
+
 Route::prefix('dashboard')->middleware('auth')->group(function(){ 
   Route::get('duk', function(){
     

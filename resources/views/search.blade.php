@@ -4,12 +4,16 @@
     <!-- Hero -->
     <div class="bg-body-light">
         <div class="" >
+            <div style="display:inline-block">
             <img style="width: 100%;" src="{{asset('media/sumtin/penktas_puslapis.png')}}">
-            <a href="{{ route('statybos_paslauga', ['user' => $user]) }}'" class="custom-file-upload btn btn-round btn-primary btn-green " data-toggle="tooltip" data-placement="top" title="Press to submit" >
-                                <span style="font-size: 17px;">
-                                    <i class="fas fa-upload"></i>
-                                </span>    
-            </a>
+            <a style="position:absolute;top:<?php echo(480/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('more_info')}}"></a>
+            </div>
+            <div style="display:inline-block">
+                <a style="position:absolute;top:<?php echo(855/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('more_info')}}"></a>
+            </div>
+            <div style="display:inline-block">
+                <a style="position:absolute;top:<?php echo(1230/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('more_info')}}"></a>
+            </div>
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                             <script>
                                 $("#file-upload").change(function(){

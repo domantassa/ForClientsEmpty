@@ -383,8 +383,11 @@
             <!-- END Sidebar -->
 
             <!-- Header -->
-                    <img id="page-header" style="width: 100%;" src="{{asset('media/sumtin/meniu.png')}}">
-            <!-- END Header -->
+                    <div style="display:inline-block">
+                    <img id="page-header" style="width: 100%;z-index:0" src="{{asset('media/sumtin/meniu.png')}}">
+                    <a style="z-index:1;position:fixed;top:<?php echo(20/16);?>rem;left:<?php echo(275/16);?>rem;color:red;width:<?php echo(80/16);?>rem;height:<?php echo(35/16);?>rem;" href="{{route('files')}}"></a>
+                    </div> 
+                    <!-- END Header -->
 
             <!-- Main Container -->
             <main id="main-container" class="bg-body-light">

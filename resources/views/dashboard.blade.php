@@ -6,18 +6,17 @@
         <div class="" >
             <div style="display:inline-block">
                 <img style="width: 100%;" src="{{asset('media/sumtin/pirmas_puslapis.png')}}">
-                <a style="position:absolute;top:220px;left:25px;color:red;width:320px;height:40px;background:blue;" href="{{route('files')}}"></a>
+                <a style="position:absolute;top:<?php echo(220/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('files')}}"></a>
             </div>
-            <!--<img style="width: 100%;" src="{{asset('media/photos/antra.PNG')}}">
-            <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
-            <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
-            <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
-            <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}"> -->
-            <a href="{{ route('paslaugos', ['user' => $user]) }}'" class="custom-file-upload btn btn-round btn-primary btn-green " data-toggle="tooltip" data-placement="top" title="Press to submit" >
-                                <span style="font-size: 17px;">
-                                    <i class="fas fa-upload"></i>
-                                </span>    
-            </a>
+            <div style="display:inline-block">
+                <a style="position:absolute;top:<?php echo(275/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('files')}}"></a>
+            </div>
+            <div style="display:inline-block">
+                <a style="position:absolute;top:<?php echo(1540/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('statybos_paslauga')}}"></a>
+            </div>
+            <div style="display:inline-block">
+                <a style="position:absolute;top:<?php echo(1780/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('search')}}"></a>
+            </div>
                     <form action="{{ route('upload', ['user' => $user]) }}" method="post" role="form" class="file-form" enctype="multipart/form-data">
                              @csrf    
                              <!--
@@ -51,40 +50,5 @@
 
     <!-- Page Content -->
 
-
-    <div class="contentShadowInset">
-        
-        <div class="row justify-content-center dashboardas">
-            
-            <div class="col-md-12 col-xl-12">
-            <div class="col-12 " style="padding-left:1.875rem">
-            <table>
-                <tbody>
-                        @foreach ($files->where('order_id',null) as $file)
-                            
-                           <tr>
-                            
-                                <td style="width:100%"><div  class=" col btn-round btn-grey mr-2" style="text-align:left">{{$file->name}}</div></td>
-                                <td style="width:100px"><a href="{{route('download',$file->id)}}"><div  class=" btn btn-round btn-primary btn-green">Parsisiusti</div></a></td>
-                                <td  style="width:30px"><div  class="  btn-round btn-trash"><a href="{{ route('deleteFile', ['file' => $file->id]) }}"><i class="fa fa-trash trash"></i></a></div></td>
-                            
-                            </tr>
-                            @endforeach
-                </tbody>
-            </table>
-            </div>
-                
-                <div class=" {{ $files->count() ? 'blockWithTopMargin' : '' }}">
-
-                    
-                            
-                        
-                        
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- END Page Content -->
 @endsection
