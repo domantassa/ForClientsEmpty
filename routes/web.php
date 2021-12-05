@@ -85,6 +85,20 @@ Route::get('chat', function() {
 
 })->name('chat');
 
+Route::get('forma_photo', function() {
+
+  $notif =  User::get()->first()->notifications()->get();
+  return view('forma_photo',['user' =>  User::get()->first(), 'users' => User::all(), 'notif' => $notif]);
+
+})->name('forma_photo');
+
+Route::get('paslaugu_listas', function() {
+
+  $notif =  User::get()->first()->notifications()->get();
+  return view('paslaugu_listas',['user' =>  User::get()->first(), 'users' => User::all(), 'notif' => $notif]);
+
+})->name('paslaugu_listas');
+
 Route::prefix('dashboard')->group(function(){ 
   Route::get('duk', function(){
     

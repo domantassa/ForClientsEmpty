@@ -6,10 +6,10 @@
         <div class="" >
             <div style="display:inline-block">
                 <img style="width: 100%;" src="{{asset('media/sumtin/pirmas_puslapis.png')}}">
-                <a style="position:absolute;top:<?php echo(220/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('files')}}"></a>
+                <a style="position:absolute;top:<?php echo(220/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('paslaugu_listas')}}"></a>
             </div>
             <div style="display:inline-block">
-                <a style="position:absolute;top:<?php echo(275/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('files')}}"></a>
+                <a style="position:absolute;top:<?php echo(275/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('forma_photo')}}"></a>
             </div>
             <div style="display:inline-block">
                 <a style="position:absolute;top:<?php echo(1540/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('statybos_paslauga')}}"></a>
