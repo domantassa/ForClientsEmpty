@@ -10,6 +10,11 @@
             <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
             <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}">
             <img style="width: 100%;" src="{{asset('media/photos/headerbanner.PNG')}}"> -->
+            <a href="{{ route('paslaugos', ['user' => $user]) }}'" class="custom-file-upload btn btn-round btn-primary btn-green " data-toggle="tooltip" data-placement="top" title="Press to submit" >
+                                <span style="font-size: 17px;">
+                                    <i class="fas fa-upload"></i>
+                                </span>    
+            </a>
                     <form action="{{ route('upload', ['user' => $user]) }}" method="post" role="form" class="file-form" enctype="multipart/form-data">
                              @csrf    
                              <!--
@@ -21,7 +26,7 @@
                             </label>
                             -->
                             <input id="file-upload" type="file" name="file" />
-                            <button type="submit" class="file-custom btn " data-toggle="tooltip" data-placement="top" title="Press to submit" >
+                            <button type="submit" class="custom-file-upload btn btn-round btn-primary btn-green " data-toggle="tooltip" data-placement="top" title="Press to submit" >
                                 <span style="font-size: 17px;">
                                     <i class="fas fa-upload"></i>
                                 </span>    

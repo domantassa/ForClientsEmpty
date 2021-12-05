@@ -20,28 +20,28 @@ use App\User;
 }*/
 Auth::routes();
 Route::resource('verslai','VerslaiController');
-Route::get('paslaugos', 'paslaugos@paslaugos');
+Route::get('paslaugos', 'paslaugos@paslaugos')->name('paslaugos');
 
 Route::get('statybos_paslauga', function() {
 
   $notif = Auth()->User()->notifications()->get();
   return view('statybos_paslauga',['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);
 
-});
+})->name('statybos_paslauga');
 
 Route::get('search', function() {
 
   $notif = Auth()->User()->notifications()->get();
   return view('search',['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);
 
-});
+})->name('search');
 
 Route::get('more_info', function() {
 
   $notif = Auth()->User()->notifications()->get();
   return view('more_info',['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);
 
-});
+})->name('more_info');
 
 Route::prefix('dashboard')->middleware('auth')->group(function(){ 
   Route::get('duk', function(){
