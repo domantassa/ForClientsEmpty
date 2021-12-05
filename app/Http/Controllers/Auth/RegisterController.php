@@ -54,6 +54,7 @@ class RegisterController extends Controller
         else{
             $this->middleware('admin');
         }*/
+        */
     }
 
     /**
