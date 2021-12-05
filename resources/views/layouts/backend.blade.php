@@ -383,108 +383,7 @@
             <!-- END Sidebar -->
 
             <!-- Header -->
-            <header id="page-header">
-                <!-- Header Content -->
-                <div class="content-header">
-                    <!-- Left Section -->
-                    <div class="d-flex align-items-center">
-                        <!-- Toggle Sidebar -->
-                        <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
-                        <button type="button" class="btn btn-sm btn-dual mr-2 d-lg-none">
-                            <i class="fa fa-fw fa-bars"></i>
-                        </button>
-                        <!-- END Toggle Sidebar -->
-
-                        <!-- Toggle Mini Sidebar -->
-                        <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
-                        <!--<button type="button" class="btn btn-sm btn-dual mr-2 d-none d-lg-inline-block" data-toggle="layout" data-action="sidebar_mini_toggle">
-                            <i class="fa fa-fw fa-ellipsis-v"></i>
-                        </button>-->
-                        <!-- END Toggle Mini Sidebar -->
-                        
-                        @if(Auth::user()->position == 'admin')	
-                        <a href="{{route('register')}}" class="btn btn-sm btn-dual  btn-round btn-white mr-2 d-none d-lg-inline-block">
-                            Sukurti paskyrą
-                        </a>
-                                        @else
-                                        @if(Auth::user()->remaining > 0)		
-                                        <a href="{{route('orders.create')}}" class="btn btn-sm btn-dual  btn-round btn-white mr-2 d-none d-lg-inline-block">
-                            Pradėti užsakymą
-                        </a>
-                        @else
-                        
-                        <div data-toggle="tooltip" data-placement="bottom" title="Gausite naujų užsakymų prasidėjus naujam mėnesiui"  class="btn btn-sm btn-dual btn-white btn-round  mr-2 d-none d-lg-inline-block  disabled-button cursor">
-                            Užsakymai baigėsi
-                </div>
-
-                        @endif	
-                        @if(Auth::user()->remaining > 0)	
-                        <a href="{{route('orders.create')}}" data-toggle="tooltip" data-placement="bottom" title="Likę užsakymai šiam mėnesiui" class="btn btn-sm btn-dual  btn-round btn-white mr-2 d-none d-lg-inline-block">
-                            {{ Auth::user()->remaining }}
-                        </a>
-                        @endif	
-                                        @endif	
-                        
-                        <!-- END Search Form -->
-                    </div>
-                    <!-- END Left Section -->
-
-                    <!-- Right Section -->
-                    <div class="d-flex align-items-center">
-                        <div style="font-weight: 600; color:#CD5C5C;font-size:12">CONNEXA.</div>
-                        <!-- User Dropdown -->
-                        <div class="dropdown d-inline-block ml-2">
-                            
-                        <!-- END User Dropdown -->
-
-                        <!-- Notifications Dropdown -->
-                       
-                        
-<!--<a href="" ><div class="p-2 bg-primary text-center">
-                            <h6 class="delete-notifications dropdown-header text-uppercase text-white">Delete all notifications</h6>
-                        </div> </a>-->
-                        
-                        <!-- END Notifications Dropdown -->
-
-                        <!-- Toggle Side Overlay -->
-                        <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                        
-                        <!-- END Toggle Side Overlay -->
-                    </div>
-                    <!-- END Right Section -->
-                </div>
-                <!-- END Header Content -->
-
-                <!-- Header Search -->
-                <div id="page-header-search" class="overlay-header bg-white">
-                    <div class="content-header">
-                        <form class="w-100" action="/dashboard/sendMessage" method="POST">
-                            @csrf
-                            <div class="input-group input-group-sm">
-                                <div class="input-group-prepend">
-                                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                                    <button type="button" class="btn btn-danger" data-toggle="layout" data-action="header_search_off">
-                                        <i class="fa fa-fw fa-times-circle"></i>
-                                    </button>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Search or hit ESC.." id="page-header-search-input" name="page-header-search-input">
-                            </div>
-                        </form>
-                   </div>
-                </div>
-                <!-- END Header Search -->
-
-                <!-- Header Loader -->
-                <!-- Please check out the Loaders page under Components category to see examples of showing/hiding it -->
-                <div id="page-header-loader" class="overlay-header bg-white">
-                    <div class="content-header">
-                        <div class="w-100 text-center">
-                            <i class="fa fa-fw fa-circle-notch fa-spin"></i>
-                        </div>
-                    </div>
-                </div>
-                <!-- END Header Loader -->
-            </header>
+                    <img id="page-header" style="width: 100%;" src="{{asset('media/sumtin/meniu.png')}}">
             <!-- END Header -->
 
             <!-- Main Container -->
@@ -494,13 +393,7 @@
             <!-- END Main Container -->
 
             <!-- Footer -->
-            <footer id="page-footer" class="bg-body-light">
-                <div class="content py-3">
-                    <div class="row font-size-sm">
-
-                    </div>
-                </div>
-            </footer>
+            
             <!-- END Footer -->
 
             <!-- Apps Modal -->
