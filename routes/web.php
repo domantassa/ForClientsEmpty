@@ -43,6 +43,20 @@ Route::get('more_info', function() {
 
 })->name('more_info');
 
+Route::get('rate', function() {
+
+  $notif = Auth()->User()->notifications()->get();
+  return view('rate',['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);
+
+})->name('rate');
+
+Route::get('production', function() {
+
+  $notif = Auth()->User()->notifications()->get();
+  return view('production',['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);
+
+})->name('production');
+
 Route::prefix('dashboard')->middleware('auth')->group(function(){ 
   Route::get('duk', function(){
     

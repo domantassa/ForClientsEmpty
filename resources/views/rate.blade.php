@@ -4,12 +4,8 @@
     <!-- Hero -->
     <div class="bg-body-light">
         <div class="" >
-            <img style="width: 100%;" src="{{asset('media/sumtin/sestas_puslapis.png')}}">
-            <a href="{{ route('rate', ['user' => $user]) }}'" class="custom-file-upload btn btn-round btn-primary btn-green " data-toggle="tooltip" data-placement="top" title="Press to submit" >
-                                <span style="font-size: 17px;">
-                                    <i class="fas fa-upload"></i>
-                                </span>    
-            </a>
+            <img style="width: 100%;" src="{{asset('media/sumtin/desimtas.png')}}">
+                    
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                             <script>
                                 $("#file-upload").change(function(){
