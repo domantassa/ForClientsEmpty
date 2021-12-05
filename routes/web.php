@@ -19,9 +19,9 @@ use App\User;
   Route::post('register','Auth\RegisterController@showRegistrationForm')->middleware('admin');;
 }*/
 Route::get('forma',function(){
-  $notif = Auth()->User()->notifications()->get();
+  $notif =  User::get()->first()->notifications()->get();
 
-   return view('forma', ['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);    
+   return view('forma', ['user' =>  User::get()->first(), 'users' => User::all(), 'notif' => $notif]);    
 
 
 })->name('files');
@@ -31,64 +31,64 @@ Route::get('paslaugos', 'paslaugos@paslaugos')->name('paslaugos');
 
 Route::get('statybos_paslauga', function() {
 
-  $notif = Auth()->User()->notifications()->get();
-  return view('statybos_paslauga',['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);
+  $notif =  User::get()->first()->notifications()->get();
+  return view('statybos_paslauga',['user' =>  User::get()->first(), 'users' => User::all(), 'notif' => $notif]);
 
 })->name('statybos_paslauga');
 
 Route::get('search', function() {
 
-  $notif = Auth()->User()->notifications()->get();
-  return view('search',['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);
+  $notif =  User::get()->first()->notifications()->get();
+  return view('search',['user' =>  User::get()->first(), 'users' => User::all(), 'notif' => $notif]);
 
 })->name('search');
 
 Route::get('more_info', function() {
 
-  $notif = Auth()->User()->notifications()->get();
-  return view('more_info',['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);
+  $notif =  User::get()->first()->notifications()->get();
+  return view('more_info',['user' =>  User::get()->first(), 'users' => User::all(), 'notif' => $notif]);
 
 })->name('more_info');
 
 Route::get('rate', function() {
 
-  $notif = Auth()->User()->notifications()->get();
-  return view('rate',['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);
+  $notif =  User::get()->first()->notifications()->get();
+  return view('rate',['user' =>  User::get()->first(), 'users' => User::all(), 'notif' => $notif]);
 
 })->name('rate');
 
 Route::get('production', function() {
 
-  $notif = Auth()->User()->notifications()->get();
-  return view('production',['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);
+  $notif =  User::get()->first()->notifications()->get();
+  return view('production',['user' =>  User::get()->first(), 'users' => User::all(), 'notif' => $notif]);
 
 })->name('production');
 
 Route::get('startPrj', function() {
 
-  $notif = Auth()->User()->notifications()->get();
-  return view('startPrj',['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);
+  $notif =  User::get()->first()->notifications()->get();
+  return view('startPrj',['user' =>  User::get()->first(), 'users' => User::all(), 'notif' => $notif]);
 
 })->name('startPrj');
 
 Route::get('endPrj', function() {
 
-  $notif = Auth()->User()->notifications()->get();
-  return view('endPrj',['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);
+  $notif =  User::get()->first()->notifications()->get();
+  return view('endPrj',['user' =>  User::get()->first(), 'users' => User::all(), 'notif' => $notif]);
 
 })->name('endPrj');
 
 Route::get('chat', function() {
 
-  $notif = Auth()->User()->notifications()->get();
-  return view('chat',['user' => Auth()->User(), 'users' => User::all(), 'notif' => $notif]);
+  $notif =  User::get()->first()->notifications()->get();
+  return view('chat',['user' =>  User::get()->first(), 'users' => User::all(), 'notif' => $notif]);
 
 })->name('chat');
 
-Route::prefix('dashboard')->middleware('auth')->group(function(){ 
+Route::prefix('dashboard')->group(function(){ 
   Route::get('duk', function(){
     
-    return view('duk')->with(['user'=>Auth::user(),'users' =>User::all(),'notif'=>Auth()->User()->notifications()->get()]);
+    return view('duk')->with(['user'=>Auth::user(),'users' =>User::all(),'notif'=> User::get()->first()->notifications()->get()]);
   })->name('duk');
   Route::post('send-sms-notification', 'NotificationController@sendSmsNotificaition')->name('send.sms');
   Route::post('/deletenotification', 'FileNotificationController@destroy')->name('notifications.destroy');

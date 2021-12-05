@@ -16,7 +16,6 @@ class FileController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
 
     }
 
@@ -31,12 +30,12 @@ class FileController extends Controller
 
                     
        
-        $notif = Auth()->User()->notifications()->get();
+        $notif =  User::get()->first()->notifications()->get();
         //event(new NewMessageOrFile('hello world'));
         
-        $files = file::where('owner_id', Auth()->User()->id)->get();
+        $files = file::where('owner_id',  User::get()->first()->id)->get();
         
-        return view('dashboard', ['user' => Auth()->User(), 'users' => User::all(), 'files'=>$files, 'notif' => $notif]);
+        return view('dashboard', ['user' =>  User::get()->first(), 'users' => User::all(), 'files'=>$files, 'notif' => $notif]);
     }
 
     /**
