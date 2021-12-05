@@ -110,7 +110,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
 
   });
 });
-Route::get('/', 'ProfilesController@index')->middleware('auth');
+Route::get('/', 'ProfilesController@index');
 
 //Route::get('/dashboard/deleteNotif/{user}', 'FileNotificationController@destroy')->name('deleteNotif');
 

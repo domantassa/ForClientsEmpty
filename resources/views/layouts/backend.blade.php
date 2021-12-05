@@ -1,3 +1,8 @@
+
+<?php 
+use App\User;
+
+?>
 <!doctype html>
 <html lang="{{ config('app.locale') }}" style="background: #f9f9f9 !important">
     <head>
@@ -126,14 +131,14 @@
                 <div class="content-header" style="background-color: #353847 !important;">
                     <!-- User Avatar -->
                     <a class="img-link mr-1" href="javascript:void(0)">
-                        <img class="img-avatar img-avatar32" src="{{Auth::user()->position == 'admin' ? asset('media/avatars/avatar10.jpg') : asset('storage/CustomerSupport.jpg')}}" alt="">
+                        <img class="img-avatar img-avatar32" src="{{ User::get()->first()->position == 'admin' ? asset('media/avatars/avatar10.jpg') : asset('storage/CustomerSupport.jpg')}}" alt="">
                     </a>
                     <!-- END User Avatar -->
 
                     <!-- User Info -->
                     <div class="ml-2">
                         <div class="link-fx text-light font-w600" href="">	
-                            @if (Auth::user()->position == 'admin') 	
+                            @if ( User::get()->first()->position == 'admin') 	
                             {{$user->name}}	
                             @else	
                             Customer support	
