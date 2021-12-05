@@ -6,10 +6,10 @@
         <div class="" >
             <div style="display:inline-block">
             <img style="width: 100%;" src="{{asset('media/sumtin/trecias_puslapis.png')}}">
-                <a style="position:absolute;top:<?php echo(875/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('chat')}}"></a>
-                <a style="position:absolute;top:<?php echo(2140/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('chat')}}"></a>
-                <a style="position:absolute;top:<?php echo(943/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('send.sms')}}"></a>
-                <a style="position:absolute;top:<?php echo(2212/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('send.sms')}}"></a>
+                <a style="position:absolute;top:<?php echo(850/16);?>rem;left:0;color:red;width:100%;height:<?php echo(80/16);?>rem;" href="{{route('chat')}}"></a>
+                <a style="position:absolute;top:<?php echo(2120/16);?>rem;left:0;color:red;width:100%;height:<?php echo(80/16);?>rem;" href="{{route('chat')}}"></a>
+                <a style="position:absolute;top:<?php echo(943/16);?>rem;left:0;color:red;width:100%;height:<?php echo(80/16);?>rem;" href="{{route('send.sms')}}"></a>
+                <a style="position:absolute;top:<?php echo(2212/16);?>rem;left:0;color:red;width:100%;height:<?php echo(80/16);?>rem;" href="{{route('send.sms')}}"></a>
             </div>
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                             <script>

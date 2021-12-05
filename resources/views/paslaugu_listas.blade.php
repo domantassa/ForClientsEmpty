@@ -6,7 +6,7 @@
         <div class="" >
             <div style="display:inline-block">
                 <img style="width: 100%;" src="{{asset('media/sumtin/antras_puslapis.png')}}">
-                <a style="position:absolute;top:<?php echo(1430/16);?>rem;left:<?php echo(25/16);?>rem;color:red;width:<?php echo(320/16);?>rem;height:<?php echo(40/16);?>rem;" href="{{route('statybos_paslauga')}}"></a>
+                <a style="position:absolute;top:<?php echo(1410/16);?>rem;left:0;color:red;width:100%;height:<?php echo(80/16);?>rem;" href="{{route('statybos_paslauga')}}"></a>
             </div>           
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                             <script>
