@@ -3101,9 +3101,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./oneui/bootstrap */ "./resources/js/oneui/bootstrap.js");
 
-__webpack_require__(/*! ./pages/tables_datatables */ "./resources/js/pages/tables_datatables.js"); //require('./bootstrap');
-//import './bootstrap';
-//import './bootstrap';
+__webpack_require__(/*! ./pages/tables_datatables */ "./resources/js/pages/tables_datatables.js");
 
 /***/ }),
 
@@ -11393,7 +11391,7 @@ var createElement = __webpack_require__(/*! ../internals/document-create-element
 
 // Thank's IE8 for his funny defineProperty
 module.exports = !DESCRIPTORS && !fails(function () {
-  // eslint-disable-next-line es/no-object-defineproperty -- requied for testing
+  // eslint-disable-next-line es/no-object-defineproperty -- required for testing
   return Object.defineProperty(createElement('div'), 'a', {
     get: function () { return 7; }
   }).a != 7;
@@ -13144,7 +13142,7 @@ var store = __webpack_require__(/*! ../internals/shared-store */ "./node_modules
 (module.exports = function (key, value) {
   return store[key] || (store[key] = value !== undefined ? value : {});
 })('versions', []).push({
-  version: '3.20.0',
+  version: '3.20.1',
   mode: IS_PURE ? 'pure' : 'global',
   copyright: '© 2021 Denis Pushkarev (zloirock.ru)'
 });
@@ -14055,7 +14053,7 @@ var collection = __webpack_require__(/*! ../internals/collection */ "./node_modu
 var collectionWeak = __webpack_require__(/*! ../internals/collection-weak */ "./node_modules/core-js/internals/collection-weak.js");
 var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
 var isExtensible = __webpack_require__(/*! ../internals/object-is-extensible */ "./node_modules/core-js/internals/object-is-extensible.js");
-var enforceIternalState = (__webpack_require__(/*! ../internals/internal-state */ "./node_modules/core-js/internals/internal-state.js").enforce);
+var enforceInternalState = (__webpack_require__(/*! ../internals/internal-state */ "./node_modules/core-js/internals/internal-state.js").enforce);
 var NATIVE_WEAK_MAP = __webpack_require__(/*! ../internals/native-weak-map */ "./node_modules/core-js/internals/native-weak-map.js");
 
 var IS_IE11 = !global.ActiveXObject && 'ActiveXObject' in global;
@@ -14085,28 +14083,28 @@ if (NATIVE_WEAK_MAP && IS_IE11) {
   redefineAll(WeakMapPrototype, {
     'delete': function (key) {
       if (isObject(key) && !isExtensible(key)) {
-        var state = enforceIternalState(this);
+        var state = enforceInternalState(this);
         if (!state.frozen) state.frozen = new InternalWeakMap();
         return nativeDelete(this, key) || state.frozen['delete'](key);
       } return nativeDelete(this, key);
     },
     has: function has(key) {
       if (isObject(key) && !isExtensible(key)) {
-        var state = enforceIternalState(this);
+        var state = enforceInternalState(this);
         if (!state.frozen) state.frozen = new InternalWeakMap();
         return nativeHas(this, key) || state.frozen.has(key);
       } return nativeHas(this, key);
     },
     get: function get(key) {
       if (isObject(key) && !isExtensible(key)) {
-        var state = enforceIternalState(this);
+        var state = enforceInternalState(this);
         if (!state.frozen) state.frozen = new InternalWeakMap();
         return nativeHas(this, key) ? nativeGet(this, key) : state.frozen.get(key);
       } return nativeGet(this, key);
     },
     set: function set(key, value) {
       if (isObject(key) && !isExtensible(key)) {
-        var state = enforceIternalState(this);
+        var state = enforceInternalState(this);
         if (!state.frozen) state.frozen = new InternalWeakMap();
         nativeHas(this, key) ? nativeSet(this, key, value) : state.frozen.set(key, value);
       } else nativeSet(this, key, value);

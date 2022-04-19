@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Events\NewMessageOrFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\User;
@@ -20,27 +19,23 @@ class ProfilesController extends Controller
         
         $expiresAt = now()->addMinutes(5);
         $now = now();
-       
-        //Cache::put('user-is-online-' . Auth::user()->id, true, $expiresAt);
-        
     }
 
 
-    public function index()
+    public function index(Request $request)
     {
         
-        //$user = User::findOrFail($user);
-       // return view('dashboard', [
-        //    'user' => $user,
-       // ]);
-       
-            
-            //dd($refresh_date);
             $notif = Auth()->User()->notifications()->get();
-            //event(new NewMessageOrFile('hello world'));
-            
-            $files = file::where('owner_id', Auth()->User()->id)->get();
 
+            if($request->filter_by){
+                $request->request->add(['class' => 'file']);
+                $files=$this->filter($request);
+            }
+            else{
+                $files=file::all();
+            }
+            $files = file::where('owner_id', Auth()->User()->id);//->get();
+            
             $user = Auth()->User();
             
             if($user->refresh_date != null)
@@ -66,12 +61,14 @@ class ProfilesController extends Controller
                     $refresh_date=date('Y-m-d H:i:s',$refresh_dateTime+2592000);
                     //prideti prie refreshdate + 1 men
                     $user->refresh_date = $refresh_date;
+                
                     $user->save();
                 }
             }
             
             
-            return view('dashboard', ['user' => Auth()->User(), 'users' => User::all(), 'files'=>$files, 'notif' => $notif]);
+            return view('dashboard', ['user' => Auth()->User(), 'users' => User::all(), 'files'=>$files, 'notif' => $notif,
+        ]);
         
 
        
@@ -81,9 +78,8 @@ class ProfilesController extends Controller
     {
         
         $user = User::findOrFail($id);
-        //event(new NewMessageOrFile('hello world'));
+
         $notif = Auth()->User()->notifications()->get();
-        //$files = Storage::allFiles('public/'.$user->name);
         $files = file::where('owner_id', $id)->get();
         
         return view('dashboard', ['user' => $user, 'users' => User::all(), 'files'=>$files, 'notif' => $notif]);
@@ -102,16 +98,9 @@ class ProfilesController extends Controller
         $user = User::findOrFail($user);
         Storage::deleteDirectory('public/'.$user->name);
         Storage::makeDirectory('public/'.$user->name);
-
-        //while(file::where('owner_id', $user->id)->get() != null)
-        //{
-            
-        //}
         
         $file = file::where('owner_id', $user->id)->take(file::where('owner_id', $user->id)->count());
             $file->delete();
-        
-        //
 
         return redirect('dashboard');
     }
@@ -121,16 +110,19 @@ class ProfilesController extends Controller
         $user = User::find($user);
         $files = $user->files()->get();
         $orders = $user->orders()->get();
+        $brands = $user->brands()->get();
         $notifications = $user->notifications()->get();
         if(count($files) > 0)
             $user->files()->delete();
+        if(count($brands) > 0)
+            $user->brands()->delete();
         if(count($orders) > 0)
             $user->orders()->delete();
         if(count($notifications) > 0)
             $user->notifications()->delete();
         $user->delete();
         Storage::deleteDirectory($user->name);
-        return redirect('users');
+        return redirect('dashboard/users');
     }
 
     public function update(Request $request)
@@ -146,9 +138,6 @@ class ProfilesController extends Controller
         $files = file::where('owner_id', Auth()->User()->id)->get();
         
         return view('users', ['user' => Auth()->User(), 'users' => User::all(), 'files'=>$files, 'notif' => $notif]);
-           
-        
-        
     }
 
     public function getAdminProfile()
@@ -177,7 +166,5 @@ class ProfilesController extends Controller
             
         return view('users', ['user' => Auth()->User(), 'users' => User::all(), 'files'=>$files, 'notif' => $notif]);
     }
-
-    
 }
 

@@ -15,10 +15,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $guarded = [];
-    //protected $fillable = [
-     //   'name', 'email', 'password',
-    //];
+    protected $fillable = ['name', 'email', 'password', 'position', 'avatar_image_number', 'remaining', 'plan', 'refresh_date'];
     
 
     /**
@@ -48,22 +45,32 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\file','owner_id');
     }
+    public function brands()
+    {
+        return $this->hasMany('App\brand', 'user_id');
+    }
     public function orders()
     {
         return $this->hasMany('App\Order','owner_id');
     }
     public function notifications()
     {
-        return $this->hasMany('App\FileNotification');
+        return $this->hasMany('App\FileNotification', 'user_id');
     }
 
     public function messages()
     {
-        return $this->hasMany(Message::class);
+        return $this->hasMany('App\Message', 'receiver_user_id');
     }
 
-    public function isOnline()
-    {
-        //return Cache::has('user-is-online-' . $this->id);
+    public function userNameShort($lenght = 27) {
+        if(strlen($this->name) > $lenght) {
+            $strr = substr($this->name, 0, $lenght-4);
+            $strr .= "...";
+            return $strr;
+        }
+        else {
+            return $this->name;
+        }
     }
 }

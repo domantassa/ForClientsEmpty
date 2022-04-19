@@ -91,9 +91,7 @@ class FileNotificationController extends Controller
     {
         $fileNotification = FileNotification::where('user_id', $user)->take(FileNotification::where('user_id', $user)->count());
         $fileNotification->delete();
-        //if($userId == 1 )
-            //return (redirect('dashboard/'.$userId));
-        return (redirect('/dashboard'));
+        return back();
         
     }
 }

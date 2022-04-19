@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Order;
 use App\file;
-use App\Events\EndPool;
+use App\Events\MyEvent;
 use App\FileNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -25,16 +25,22 @@ class FileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
 
-                    
+      
        
         $notif = Auth()->User()->notifications()->get();
-        //event(new NewMessageOrFile('hello world'));
+        if($request->filter_by){
+            $request->request->add(['class' => 'file']);
+            $files=$this->filter($request);
+        }
+        else{
+            $files=file::all();
+        }
+        $files = file::where('owner_id', Auth()->User()->id);//->get();
         
-        $files = file::where('owner_id', Auth()->User()->id)->get();
         
         return view('dashboard', ['user' => Auth()->User(), 'users' => User::all(), 'files'=>$files, 'notif' => $notif]);
     }
@@ -58,7 +64,9 @@ class FileController extends Controller
      */
     public function store(Request $request, $user)
     {
-        
+        // if($user !=  Auth()->User()->id || Auth()->user()->position != 'admin') {
+        //     event(new MyEvent('Įkeltas failas naujas failas!', $user));
+        // }
 
         if(Auth()->user()->id == $user || Auth()->user()->position == 'admin')
         {
@@ -68,34 +76,36 @@ class FileController extends Controller
             ]);
             
             $file = $request->file;  
-            // Generate a file name with extension
-            $fileName = $file->getClientOriginalName();
+            $fileName = date('Y-m-d-H-i-s',time()) . '-'.$file->getClientOriginalName();
                 
             $naujasFile = file::create([
-                'name' => $file->getClientOriginalName(),
+                'name' => $fileName,
                 'path' => $user->name,
                 'owner_id' => $user->id,
                 
             ]);
             
             
-            // Save the file
             $file->storeAs('public/'.$user->name, $fileName);
-        // $files = file::where('name', $fileName)->get();
-            //foreach($files as $file)
-            //{
-        //     $result = $file;
-            //}
+
+            function toLongString(string $str) {
+                if(strlen($str) > 27) {
+                    $strr = substr($str, 0, 23);
+                    $strr .= "...";
+                    return $strr;
+                }
+                else {
+                    return $str;
+                }
+            }
             
-            
-            //$file = file::findOrFail($fileId);  
-            
+
             if($user->id != 1)
             {
                 
                 $fileNotification = FileNotification::create([
                 'user_id' => $user->id,
-                'message' => 'Naujas failas: '.$file->getClientOriginalName(),
+                'message' => 'Naujas failas: '.toLongString($file->getClientOriginalName()),
                 'link' => 'files',
                 'fileId' => $naujasFile->id,
                 ]);
@@ -185,14 +195,14 @@ class FileController extends Controller
         $user = User::find($order->owner_id);
         //$order_user = User::find($order->owner_id);
             if(  Auth()->user()->id == $order->owner_id || Auth()->user()->position == 'admin' ){
-                return Storage::download('public/'.$user->name.'/'.$file->name);
+                return Storage::download('public/'.$file->path.'/'.$file->name);
             }
         }
         else{
         if(Auth()->user()->id == $file->owner_id  || Auth()->user()->position == 'admin' )
         {
             
-            return Storage::download('public/'.$user->name.'/'.$file->name);
+            return Storage::download('public/'.$file->path.'/'.$file->name);
             //return 1;
         }
      }
